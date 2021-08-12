@@ -3,19 +3,67 @@
   <head>
     <meta charset="utf-8">
     <title>cash register app</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="">
-      <label for="bill-amount">bill-amount <br>
+    <section>
+
+      <div class="heading">
+        <h1> CASH REGISTER </h1>
+        <p>Enter the bill amount  and cash amount in <br>the given block to
+        get the results</p>
+
+      </div>
+
+    <div class="bill-amount-div">
+      <label for="bill-amount">bill-amount<br>
       <input type="number" id="bill-amount"
-      name="bill-amount" value="bill-amount"></label>
+      name="bill-amount" value="bill-amount"/></label> <br>
+      <button type="submit" name="btn-next" id="btn-next">next</button> <br>
     </div>
 
-    <div class="">
-      <label for="cash-amount">cash-amount <br>
-      <input type="number" id="cash-amount"
-      name="cash-amount" value="cash-amount"></label>
+    <div class="cash-amount-div">
+      <label for="cash-given" >Cash Amount:<br>
+      <input type="number" name="cash-given" id="cash-given"/></label> <br>
+
+      <button type="submit" name="btn-check" id="btn-check">check</button>
+      <br>
     </div>
 
+
+    <div class="errorMsg">
+
+    </div>
+
+    <div class="notesTable">
+      <table>
+          <h2>return change</h2>
+            <tr>
+              <th>no of notes</th>
+              <td class="type-of-notes"></td>
+              <td class="type-of-notes"></td>
+              <td class="type-of-notes"></td>
+              <td class="type-of-notes"></td>
+              <td class="type-of-notes"></td>
+              <td class="type-of-notes"></td>
+              <td class="type-of-notes"></td>
+              <td class="type-of-notes"></td>
+            </tr>
+
+            <tr>
+              <th>notes</th>
+              <td>2000</td>
+              <td>500</td>
+              <td>200</td>
+              <td>100</td>
+              <td>50</td>
+              <td>10</td>
+              <td>5</td>
+              <td>1</td>
+            </tr>
+          </table>
+        </div>
+        </section>
+        <script src="app.js" charset="utf-8"></script>
   </body>
 </html>
