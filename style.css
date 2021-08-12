@@ -1,0 +1,15 @@
+.bill-amount-div{
+  display: block;
+}
+
+.cash-amount-div{
+  display: block;
+}
+
+.notesTable{
+  display: block;
+}
+
+.errorMsg{
+  display: none;
+}
