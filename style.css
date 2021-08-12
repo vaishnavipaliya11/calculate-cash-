@@ -3,11 +3,11 @@
 }
 
 .cash-amount-div{
-  display: block;
+  display: none;
 }
 
 .notesTable{
-  display: block;
+  display: none;
 }
 
 .errorMsg{

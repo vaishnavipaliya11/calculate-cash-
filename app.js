@@ -6,26 +6,66 @@ var errorMsg = document.querySelector(".errorMsg")
 var notesTable = document.querySelector(".notesTable")
 var typesOfNotes = document.querySelectorAll(".type-of-notes")
 var cashAmtDiv = document.querySelector(".cash-amount-div")
-console.log(cashAmtDiv);
-console.log(typesOfNotes);
-console.log(cashAmt);
 
-function nextBtnClickHandler() {
-console.log('clicked');
-// cashAmtDiv.style.display="block"
-// notesTable.style.display="block"
+let noteArray=["2000","500","200","100","50","10","5","1"]
 
-var a = Number(billAmt.value);
-var b = Number(cashAmt.value);
-console.log(a);
-console.log(b);
-typesOfNotes.innerText = "hello"
+function valueCheck(){
+  if(Number( billAmt.value) > 0){
+    cashAmtDiv.style.display="block";
+    btnNext.style.display="none";
+    errorMsg.style.display="none";
+  }else {
+    showError("please enter proper values")
+  }
 }
 
-function checkBtnHandler(){
-  var cash = cashAmt.value
-  console.log(cash);
+function verifyAmount() {
+
+  var bill= Number(billAmt.value);
+  var cash = Number(cashAmt.value);
+
+  if(cash>0 && bill>0){
+      if(cash>=bill){
+        if(cash===bill){
+          showError("no amount should be returned")
+          notesTable.style.display="none";
+        }else {
+          calculateNoOfNotes(bill,cash)
+          notesTable.style.display="block";
+        }
+
+      }else{
+        showError("wanna wash plates ??")
+        notesTable.style.display="none";
+      }
+  }else {
+    showError("enter proper values greater than 0")
+    notesTable.style.display="none"
+  }
 }
 
-btnNext.addEventListener("click", nextBtnClickHandler)
-btnNext.addEventListener('click', checkBtnHandler)
+function calculateNoOfNotes(bill,cash) {
+  notesTable.style.display="block"
+  errorMsg.style.display="none";
+
+  var diff = cash-bill;
+
+  for(i=0; i<noteArray.length; i++){
+
+    const noOfNotes = Math.trunc(diff/noteArray[i])
+    diff = diff%noteArray[i];
+    typesOfNotes[i].innerText= noOfNotes;
+
+  }
+
+}
+
+
+function showError(msg) {
+  errorMsg.style.display="block";
+  errorMsg.innerText= msg
+}
+
+
+btnNext.addEventListener("click",valueCheck)
+btnCheck.addEventListener("click",verifyAmount)
