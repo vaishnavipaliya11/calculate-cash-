@@ -9,7 +9,7 @@ var cashAmtDiv = document.querySelector(".cash-amount-div")
 
 let noteArray=["2000","500","200","100","50","10","5","1"]
 
-function valueCheck(){
+function nextBtnHandler(){
   if(Number( billAmt.value) > 0){
     cashAmtDiv.style.display="block";
     btnNext.style.display="none";
@@ -19,7 +19,7 @@ function valueCheck(){
   }
 }
 
-function verifyAmount() {
+function checkBtnHandler() {
 
   var bill= Number(billAmt.value);
   var cash = Number(cashAmt.value);
@@ -67,5 +67,5 @@ function showError(msg) {
 }
 
 
-btnNext.addEventListener("click",valueCheck)
-btnCheck.addEventListener("click",verifyAmount)
+btnNext.addEventListener("click",nextBtnHandler)
+btnCheck.addEventListener("click",checkBtnHandler)
