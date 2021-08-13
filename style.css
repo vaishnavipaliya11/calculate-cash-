@@ -1,3 +1,59 @@
+:root{
+  --primary:#065F46
+}
+body{
+  margin:0;
+  color: white;
+}
+
+.section{
+margin: auto;
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+  min-height:200px;
+  background-color: var(--primary);
+
+}
+
+
+.heading{
+  font-size: 2rem;
+  font-weight: bold;
+}
+.heading p{
+  font-size:1.5rem;
+  font-weight: 200;
+}
+input{
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+label{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+button{
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  border: none;
+  width:80px;
+  height: 40px
+}
+
+.errorMsg{
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: none;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
 .bill-amount-div{
   display: block;
 }
@@ -9,7 +65,19 @@
 .notesTable{
   display: none;
 }
+table{
+  width: 100%;
+  table-layout: fixed;
+}
 
-.errorMsg{
-  display: none;
+.type-of-notes{
+  background-color: white;
+  font-weight: bold;
+  color: black;
+}
+
+th,td{
+  background-color: white;
+  font-size: 1.5rem;
+  color: black;
 }
